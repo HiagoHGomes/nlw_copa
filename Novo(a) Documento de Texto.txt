@@ -1,3 +1,8 @@
-npm run dev
-npx prisma studio
+//back
+npm run dev - iniciar servidor
+npx prisma studio - interface grafica
+http://localhost:3333/pools/count - host local
 npx prisma generate
+
+//front
+
