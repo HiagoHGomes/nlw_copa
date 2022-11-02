@@ -5,4 +5,14 @@ http://localhost:3333/pools/count - host local
 npx prisma generate
 
 //front
+npm run dev
+
+//mobile
+npx create-expo-app my-app - Criar aplicação React Native com Expo
+npx expo start - usar typescript
+
+//native base
+npm install native-base
+
+
 
