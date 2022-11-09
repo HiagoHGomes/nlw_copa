@@ -4,7 +4,7 @@ import { Button } from "../components/Button"
 import {Fontisto} from '@expo/vector-icons'
 import { useAuth } from "../hooks/useAuth"
 
-export const Signin = ()=> {
+export const SignIn = ()=> {
   const {signIn, isUserLoading} = useAuth();
     return (
       <Center flex={1} bgColor="gray.900" p={7}>

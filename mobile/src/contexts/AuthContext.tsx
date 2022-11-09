@@ -12,9 +12,9 @@ interface UserProps {
 }
 
 export interface AuthContextDataProps{
-    user: UserProps,
-    isUserLoading: boolean,
+    user: UserProps;
     signIn : () => Promise<void>;
+    isUserLoading: boolean;
 
 }
 
@@ -30,7 +30,7 @@ export function AuthContextProvider({children}:AutoProviderProps) {
     const [isUserLoading, setisUserLoading] = useState(false)
 
     const [request, response, promptAsync] = Google.useAuthRequest({
-        clientId: '586007225916-gqkm8jqerg5p5r0ae7hul0i4aa818hp0.apps.googleusercontent.com',
+        clientId: process.env.CLIENT_ID,
         redirectUri: AuthSession.makeRedirectUri({useProxy:true}),
         scopes: ['profile', 'email']
     })
@@ -41,6 +41,7 @@ export function AuthContextProvider({children}:AutoProviderProps) {
             setisUserLoading(true);
             await promptAsync();
         } catch (error) {
+            console.log(error);
             throw error;
         } finally {
             setisUserLoading(false);
